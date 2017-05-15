@@ -10,8 +10,10 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 /**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
+ * Class ModalAsset
+ * Asset for calculator modal
+ *  @package app\assets
+ *
  */
 class ModalAsset extends AssetBundle
 {

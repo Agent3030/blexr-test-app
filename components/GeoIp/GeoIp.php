@@ -12,6 +12,12 @@ namespace app\components\GeoIp;
 use yii\base\Component;
 use yii\web\HttpException;
 
+/**
+ * Class GeoIp
+ * API client for ipinfo.io
+ * @package app\components\GeoIp
+ */
+
 class GeoIp extends Component
 {
     const GEO_API_URL = 'http://ipinfo.io';

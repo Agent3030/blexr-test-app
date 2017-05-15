@@ -14,6 +14,12 @@ use app\models\Odds;
 use yii\console\Controller;
 use yii\console\Exception;
 
+/**
+ * Class FillOddsController
+ * Console controller for fill
+ * @package app\commands
+ */
+
 class FillOddsController extends Controller
 {
     public function actionIndex()

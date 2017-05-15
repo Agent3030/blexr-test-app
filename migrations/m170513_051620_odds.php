@@ -15,7 +15,7 @@ class m170513_051620_odds extends Migration
             'id' => $this->primaryKey(),
             'odds_uk' => $this->string(),
             'odds_eu' => $this->float(2),
-            'odds_usa' => $this->integer(),
+            'odds_usa' => $this->float(2),
         ], $tableOptions);
     }
     public function down()
