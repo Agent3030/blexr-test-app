@@ -1,0 +1,116 @@
+.modal-odds{
+  width: em(575px);
+  height: em(185px);
+  margin-top: em(50px);
+}
+.modal-main {
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: transparent;
+  border: none;
+
+
+
+  .modal-odds-header {
+    padding-bottom: 0;
+    .modal-header-top-line {
+      .empty {
+        margin-top: em(29px);
+        padding-left: em(5px);
+        background-color: transparent;
+      }
+      .modal-close {
+        background-color: $modal-header-background;
+        height: em(30px);
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        &:hover {
+          cursor: pointer;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          width: em(40px);
+          height: em(40px);
+          background-color: $modal-header-background;
+          top: em(10px);
+          left: em(-18px);
+          @include transform(rotate(45deg));
+        }
+        i {
+          position: relative;
+          z-index: 1060;
+          color: $modal-header-font-color;
+        }
+      }
+    }
+    .modal-header-main {
+      background-color: $modal-header-background;
+      border-radius: 0;
+      padding-top: em(10px);
+      padding-bottom: em(10px);
+      position: relative;
+      border-top-left-radius: 6px;
+
+      .modal-header-img {
+        margin: 0 auto;
+      }
+      .title {
+        text-align: center;
+        color: $modal-header-font-color;
+        text-transform: uppercase;
+        margin-top: em(20px);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .modal-odds-body {
+    background-color: $main-modal-background;
+
+    h4 {
+      text-align: center;
+      color: $modal-body-font-color;
+    }
+    .odds-search-form {
+      margin-top: em(20px);
+      position: relative;
+      .search-window {
+        position: absolute;
+        display: none;
+        width: 100px;
+        max-height: 120px;
+        overflow: auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        right:70px;
+        z-index: 1060;
+        p{
+          padding: 5px;
+          font-size:12px;
+        }
+
+      }
+      #odds_uk_search{
+        top:36px;
+      }
+      #odds_eu_search{
+        top: 85px;
+      }
+      #odds_usa_search{
+        top:134px;
+      }
+
+
+    }
+
+    .odds-submit{
+      margin-top:em(20px);
+      min-width: em(140px);
+    }
+  }
+
+
+}
