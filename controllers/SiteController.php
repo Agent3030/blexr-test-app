@@ -133,7 +133,7 @@ class SiteController extends Controller
      * @return Odds the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id) : array
+    protected function findModel($id) : Odds
     {
         if (($model = Odds::findOne($id)) !== null) {
             return $model;

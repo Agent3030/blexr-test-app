@@ -55,7 +55,8 @@ class Log extends \yii\db\ActiveRecord
             [['odds_eu', 'odds_usa'], 'number'],
             [['created_at'], 'default', 'value' => null],
             [['created_at'], 'integer'],
-            [['odds_uk', 'ip', 'hostname', 'org', 'loc', 'city', 'region', 'country'], 'string', 'max' => 255],
+            [['ip', 'hostname', 'org', 'loc', 'city', 'region', 'country'], 'string', 'max' => 255],
+            [['odds_uk'], 'match', 'pattern' => '/^\d+\/\d+$/i'],
             [['odds_uk', 'odds_eu', 'odds_usa'], 'required'],
         ];
     }
