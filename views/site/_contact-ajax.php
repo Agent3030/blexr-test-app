@@ -1,10 +1,13 @@
 <?php
 /**
+ * view for /site/contact-ajax action
  * Created by PhpStorm.
  * User: dzozulya
  * Date: 15.05.17
  * Time: 14:52
+ * @var $model app\models\ContactForm
  */
+
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 ?>

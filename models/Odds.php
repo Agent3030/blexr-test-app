@@ -52,8 +52,4 @@ class Odds extends \yii\db\ActiveRecord
             'odds_usa' => 'Odds Usa',
         ];
     }
-
-
-
-
 }

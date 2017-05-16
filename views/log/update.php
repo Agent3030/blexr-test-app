@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 
+/* view for /log/update action*/
 /* @var $this yii\web\View */
 /* @var $model app\models\Log */
 

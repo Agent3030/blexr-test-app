@@ -8,23 +8,68 @@
 
 namespace app\components\GeoIp;
 
-
 use yii\base\Model;
+
+/**
+ * Class GeoIpAdapter
+ * Adapter to use ipinfo Api client with standart models
+ * @package app\components\GeoIp
+ * @property array $loc
+ * @property string $ip
+ * @property string $hostname
+ * @property string $org
+ * @property string $city
+ * @property string $country
+ * @property string $region
+ */
 
 class GeoIpAdapter extends Model
 {
+    /**
+     * @var array
+     */
     public $loc=[];
+    /**
+     * @var string
+     */
     public $ip;
+    /**
+     * @var string
+     */
     public $hostname;
+    /**
+     * @var string
+     */
     public $org;
+    /**
+     * @var string
+     */
     public $city;
+    /**
+     * @var string
+     */
     public $country;
+    /**
+     * @var string
+     */
     public $region;
-
+    /**
+     * @var string
+     */
     public $apiClass = 'app\components\GeoIp\GeoIp';
+    /**
+     * @var GeoIp
+     */
     protected $apiClient;
+    /**
+     * @var \stdClass
+     */
     protected $apiResponse;
-
+    /**
+     * Initialize Api response data
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\web\HttpException
+     */
     public function init()
     {
         $this->apiClient = \Yii::createObject([

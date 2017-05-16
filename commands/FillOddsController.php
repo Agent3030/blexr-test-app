@@ -8,20 +8,21 @@
 
 namespace app\commands;
 
-
 use app\components\BettingOdds;
-use app\models\Odds;
 use yii\console\Controller;
 use yii\console\Exception;
 
 /**
  * Class FillOddsController
- * Console controller for fill
+ * Console controller for fill odds table in database
  * @package app\commands
  */
 
 class FillOddsController extends Controller
 {
+    /**
+     * @throws Exception
+     */
     public function actionIndex()
     {
         $model = new BettingOdds();

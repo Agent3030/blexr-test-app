@@ -15,13 +15,14 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 
-
+/**
+ * Class SiteController. Managed main page actions
+ * @package app\controllers
+ */
 class SiteController extends Controller
 {
-
-
     /**
-     * @inheritdoc
+     * @return array
      */
     public function behaviors()
     {
@@ -35,6 +36,10 @@ class SiteController extends Controller
         ];
     }
 
+    /**
+     * Error page standalone action
+     * @return array
+     */
     public function actions()
     {
 
@@ -44,9 +49,6 @@ class SiteController extends Controller
             ]
         ];
     }
-
-
-
     /**
      * Lists all Odds models.
      * @return mixed
@@ -140,15 +142,17 @@ class SiteController extends Controller
         }
     }
 
+    /**
+     * Loads, manages odds modal and saves logs by ajax
+     * @return string|Response
+     * @throws \Throwable
+     */
     public function actionOddsFormAjax()
     {
         $response = Yii::$app->request->post();
         $model = new Log();
-
             try {
-
                 if ($model->saveLog($response)) {
-
                     \Yii::$app->session->setFlash('alert', [
                         'body' => 'Log successfully saved',
                         'options' => ['class' => 'alert-success']
@@ -158,11 +162,13 @@ class SiteController extends Controller
             } catch (\Throwable $e) {
                 throw $e;
             }
-
-
         return $this->renderAjax('odds-form-ajax', compact('model'));
     }
 
+    /**
+     * Validates odds form by Ajax
+     * @return array
+     */
     public function actionValidationOddsForm() : array
     {
         $response = Yii::$app->request->post();
@@ -170,14 +176,15 @@ class SiteController extends Controller
         if(Yii::$app->request->isAjax) {
             $model->load($response);
             \Yii::$app->response->format = Response::FORMAT_JSON;
-
                 return ActiveForm::validate($model);
         } else {
             return $this->goBack();
         }
-
     }
-
+    /**
+     * Loads selected odd value from modal form. Place all values to form by Ajax
+     * @return array|bool
+     */
     public function actionGetValuesAjax()
     {
         $response = Yii::$app->request->post();
@@ -194,9 +201,12 @@ class SiteController extends Controller
         } else {
             return false;
         }
-
     }
-
+    /**
+     * Searches by selected value in database and get all similar data by Ajax
+     * @return array|bool
+     * @throws \yii\web\HttpException
+     */
     public function actionGetAllValuesAjax()
     {
         $response = Yii::$app->request->post();
@@ -212,6 +222,12 @@ class SiteController extends Controller
             return false;
     }
 
+    /**
+     * Get data by selected field from search result
+     * @param array $models
+     * @param string $oddsType
+     * @return array|bool
+     */
     private function getOdds(array $models, string $oddsType)
     {
         $odds=[];
@@ -227,17 +243,20 @@ class SiteController extends Controller
             return false;
     }
 
+    /**
+     * Loads and manages contact form by ajax
+     * @return string|Response
+     */
     public function actionContactAjax()
     {
         $response = Yii::$app->request->post();
         $model = new ContactForm();
 
-
         if ($model->load($response)) {
 
             if ($model->contact(Yii::$app->params['adminEmail'])) {
                 \Yii::$app->session->setFlash('alert', [
-                    'body' => 'Your message successfully sent!',
+                    'body' => 'Your message has successfully sent!',
                     'options' => ['class' => 'alert-success']
                 ]);
             } else {
@@ -245,12 +264,9 @@ class SiteController extends Controller
                     'body' => 'Your message didn\'t sent!',
                     'options' => ['class' => 'alert-danger']
                 ]);
-
             }
             return $this->redirect('/');
         }
         return $this->renderAjax('_contact-ajax', compact('model'));
-
-
     }
 }

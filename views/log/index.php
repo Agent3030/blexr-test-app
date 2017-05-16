@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
+/* view for /log/index action */
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\LogSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -28,12 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'odds_eu',
             'odds_usa',
             'ip',
-            // 'hostname',
-            // 'org',
-            // 'loc',
-            // 'city',
-            // 'region',
-            // 'country',
+            'hostname',
+           // 'org',
+            'loc:html',
+            'city',
+            'region',
+            'country',
             'created_at:datetime',
 
             ['class' => 'yii\grid\ActionColumn'],

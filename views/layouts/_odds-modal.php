@@ -1,5 +1,6 @@
 <?php
 /**
+ * Betting odds modal view. Odds form loads here
  * Created by PhpStorm.
  * User: dzozulya
  * Date: 14.05.17

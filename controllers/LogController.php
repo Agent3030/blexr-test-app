@@ -10,9 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * LogController implements the CRUD actions for Log model.
+ * LogController implements the CRUD actions for Log model. Views and updates saved logs
  */
-class LogController extends Controller
+class LogController extends Controllerpda
 {
     /**
      * @inheritdoc
@@ -55,8 +55,6 @@ class LogController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-
-
 
     /**
      * Updates an existing Log model.

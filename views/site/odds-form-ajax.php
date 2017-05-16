@@ -1,9 +1,11 @@
 <?php
 /**
+ * view for /site/odds-form-ajax
  * Created by PhpStorm.
  * User: dzozulya
  * Date: 14.05.17
  * Time: 19:53
+ * @var $model app\models\Log
  */
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;

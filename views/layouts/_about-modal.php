@@ -1,5 +1,6 @@
 <?php
 /**
+ * About modal view
  * Created by PhpStorm.
  * User: dzozulya
  * Date: 15.05.17
@@ -27,9 +28,9 @@ use yii\helpers\Html;
                 <dd>PHP, Yii2 framework basic, Postgres SQL, Javascript, Jquery,
                     HTML5, CSS3, Gulp, SASS, Docker</dd>
                 <dt>GIT:</dt>
-                <dd></dd>
+                <dd><?=Yii::$app->formatter->asUrl('https://github.com/Agent3030/blexr-test-app')?></dd>
                 <dt>Demo page:</dt>
-                <dd></dd>
+                <dd><?=Yii::$app->formatter->asUrl('http://dizo.online:8080')?></dd>
             </dl>
         </div>
         <div class="col-md-12 text-center">

@@ -15,6 +15,12 @@
 namespace app\assets;
 use yii\web\AssetBundle;
 
+/**
+ * Class FontAwesomeAsset
+ * Creates asset for FA
+ * @package app\assets
+ */
+
 class FontAwesomeAsset extends AssetBundle
 {
     public $sourcePath = '@bower/font-awesome';

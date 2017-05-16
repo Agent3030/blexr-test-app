@@ -1,5 +1,6 @@
 <?php
 /**
+ * Contact modal view. Contact Form loads here
  * Created by PhpStorm.
  * User: dzozulya
  * Date: 15.05.17

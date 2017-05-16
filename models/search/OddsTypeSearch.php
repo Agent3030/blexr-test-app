@@ -10,6 +10,7 @@ use yii\web\HttpException;
 
 /**
  * OddsSearch represents the model behind the search form of `app\models\Odds`.
+ * Using for search data by selected form field
  */
 class OddsTypeSearch extends Odds
 {
@@ -24,10 +25,8 @@ class OddsTypeSearch extends Odds
             ['label', 'string'],
             [['odds_uk'], 'safe'],
             [['odds_eu', 'odds_usa'], 'number']
-
         ];
     }
-
     /**
      * @inheritdoc
      */
@@ -40,11 +39,11 @@ class OddsTypeSearch extends Odds
     /**
      * Creates data provider instance with search query applied
      *
-     * @param array $params
-     *
+     * @param array $searchParams
      * @return ActiveDataProvider
+     * @throws  HttpException
      */
-    public function search($searchParams)
+    public function search(array $searchParams) : ActiveDataProvider
     {
         $query = Odds::find();
 
@@ -60,7 +59,7 @@ class OddsTypeSearch extends Odds
                 'label' => $searchParams['label']
             ], false);
         } else
-            throw new HttpException('503', 'Odds type not set');
+            throw new HttpException(503, 'Odds type not set');
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails

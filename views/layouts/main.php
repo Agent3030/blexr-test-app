@@ -1,5 +1,5 @@
 <?php
-
+/* Layout for a views*/
 /* @var $this \yii\web\View */
 /* @var $content string */
 

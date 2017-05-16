@@ -81,16 +81,24 @@ class Log extends \yii\db\ActiveRecord
         ];
     }
 
+    /**
+     * Creates adapter for Ipinfo Api Client
+     * @throws \yii\base\InvalidConfigException
+     */
     public function init()
     {
         $this->adapter = Yii::createObject($this->adapterClass);
 
     }
 
+    /**
+     * @param array $response
+     * @return bool
+     * @throws HttpException
+     */
     public function saveLog(array $response) : bool
     {
         if($this->load($response)){
-
             $this->setAttributes($this->adapter->attributes, false);
             if(!$this->save()){
                 throw new HttpException(503, 'Log Not Saved');
@@ -99,6 +107,4 @@ class Log extends \yii\db\ActiveRecord
         } else
             return false;
     }
-
-
 }
