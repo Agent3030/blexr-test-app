@@ -1,0 +1,11 @@
+{
+  "name": "blexr_test_markup",
+  "version": "0.0.1",
+  "description": "Main page markup for blexr test task",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "D.Zozulya",
+  "license": "ISC"
+}

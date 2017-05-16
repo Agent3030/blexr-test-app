@@ -1,0 +1,100 @@
+/*
+ * A partial implementation of the Ruby list functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
+ */
+/*
+ * A partial implementation of the Ruby constants functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/constants.rb
+ */
+/*
+ * A partial implementation of the Ruby display functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/core/lib/compass/core/sass_extensions/functions/display.rb
+ */
+/** colors **/
+.modal-odds {
+  width: 35.9375em;
+  height: 11.5625em;
+  margin-top: 3.125em; }
+
+.modal-main {
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: transparent;
+  border: none; }
+.modal-main .modal-odds-header {
+  padding-bottom: 0; }
+.modal-main .modal-odds-header .modal-header-top-line .empty {
+  margin-top: 1.8125em;
+  padding-left: 0.3125em;
+  background-color: transparent; }
+.modal-main .modal-odds-header .modal-header-top-line .modal-close {
+  background-color: #222;
+  height: 1.875em;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px; }
+.modal-main .modal-odds-header .modal-header-top-line .modal-close:hover {
+  cursor: pointer; }
+.modal-main .modal-odds-header .modal-header-top-line .modal-close:after {
+  content: '';
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: #222;
+  top: 0.625em;
+  left: -1.125em;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+.modal-main .modal-odds-header .modal-header-top-line .modal-close i {
+  position: relative;
+  z-index: 1060;
+  color: #fff; }
+.modal-main .modal-odds-header .modal-header-main {
+  background-color: #222;
+  border-radius: 0;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  position: relative;
+  border-top-left-radius: 6px; }
+.modal-main .modal-odds-header .modal-header-main .modal-header-img {
+  margin: 0 auto; }
+.modal-main .modal-odds-header .modal-header-main .title {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 1.25em;
+  margin-bottom: 0; }
+.modal-main .modal-odds-body {
+  background-color: #f4f4f4; }
+.modal-main .modal-odds-body h4 {
+  text-align: center;
+  color: #222; }
+.modal-main .modal-odds-body .odds-search-form {
+  margin-top: 1.25em;
+  position: relative; }
+.modal-main .modal-odds-body .odds-search-form .search-window {
+  position: absolute;
+  display: none;
+  width: 100px;
+  max-height: 120px;
+  overflow: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  right: 70px;
+  z-index: 1060; }
+.modal-main .modal-odds-body .odds-search-form .search-window p {
+  padding: 5px;
+  font-size: 12px; }
+.modal-main .modal-odds-body .odds-search-form #odds_uk_search {
+  top: 36px; }
+.modal-main .modal-odds-body .odds-search-form #odds_eu_search {
+  top: 85px; }
+.modal-main .modal-odds-body .odds-search-form #odds_usa_search {
+  top: 134px; }
+.modal-main .modal-odds-body .odds-submit {
+  margin-top: 1.25em;
+  min-width: 8.75em; }
